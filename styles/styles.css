@@ -17,19 +17,84 @@ body {
   background-color: hsl(30deg, 38%, 92%);
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ==================== THE CARD ==================== */
 .container {
-  height: 450px;
   width: 600px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 10px;
 }
+.container__left {
+  height: 450px;
+}
 .container__left .img_for_desktop img {
-  width: 302px;
+  width: 300px;
+  height: 450px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.container__right {
+  height: 450px;
+  padding: 35px 33px 30px;
+}
+.container__right h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 5px;
+  font-size: 10px;
+  margin-bottom: 15px;
+}
+.container__right h2 {
+  color: hsl(212deg, 21%, 14%);
+  font-size: 31px;
+  font-family: "Fraunces", serif;
+  margin-bottom: 20px;
+}
+.container__right p {
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+.container__right .prices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 25px;
+}
+.container__right .prices__left h1 {
+  color: hsl(158deg, 36%, 37%);
+  font-size: 31px;
+  font-family: "Fraunces", serif;
+}
+.container__right .prices__right {
+  place-self: center;
+}
+.container__right .prices__right h5 {
+  font-weight: 500;
+  text-decoration: line-through;
+  margin-left: -30px;
+}
+.container__right .btn {
+  padding: 15px 62px;
+  background-color: hsl(158deg, 36%, 37%);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.container__right .btn a {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+.container__right .btn:hover {
+  background-color: #1a4031;
 }
 .container__right h3, .container__right p, .container__right h5 {
   color: hsl(228deg, 12%, 48%);
@@ -37,11 +102,53 @@ body {
 
 /* ==================== MEDIA QUERIES ==================== */
 @media screen and (max-width: 600px) {
-  .img_for_desktop {
+  body {
+    padding: 20px 0;
+  }
+  .container {
+    width: 345px;
+    grid-template-columns: 1fr;
+  }
+  .container__left {
+    height: 240px;
+  }
+  .container__left .img_for_desktop {
     display: none;
   }
-  .img_for_mobile {
+  .container__left .img_for_mobile {
     display: block;
+  }
+  .container__left .img_for_mobile img {
+    height: 240px;
+    width: 345px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .container__right {
+    height: 372px;
+    padding: 25px;
+    background-color: hsl(0deg, 0%, 100%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .container__right h3 {
+    font-size: 9px;
+    margin-bottom: 15px;
+  }
+  .container__right h2 {
+    font-size: 28px;
+  }
+  .container__right p {
+    margin-bottom: 20px;
+  }
+  .container__right .prices {
+    margin-bottom: 20px;
+  }
+  .container__right .prices h1 {
+    font-size: 28px;
+  }
+  .container__right .prices h5 {
+    margin-left: -90px;
   }
 }
 @media screen and (min-width: 601px) {
@@ -50,5 +157,8 @@ body {
   }
   .img_for_mobile {
     display: none;
+  }
+  body {
+    height: calc(100vh - 1px);
   }
 }/*# sourceMappingURL=styles.css.map */
