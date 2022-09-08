@@ -1,0 +1,76 @@
+/* ==================== Variables ==================== */
+    //colors
+$darkCyan: hsl(158, 36%, 37%);
+$cream: hsl(30, 38%, 92%);
+$veryDarkBlue: hsl(212, 21%, 14%);
+$darkGrayishBlue: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+    //Typography
+$bodyFontSize: 14px;
+$fontMontserrat: 'Montserrat', sans-serif;
+$fontFraunces: 'Fraunces', serif;
+
+/* ==================== GENERAL ==================== */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0; //the line that is drawn around elements OUTSIDE the borders
+    appearance: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $cream;
+    font-size: $bodyFontSize;
+    font-family: $fontMontserrat;
+}
+
+
+
+/* ==================== THE CARD ==================== */
+.container{
+    height: 450px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $white;
+    border-radius: 10px;
+
+    &__left{
+        .img_for_desktop img{
+            width: 302px;
+        }
+    }
+
+    &__right{
+        h3, p, h5{
+            color: $darkGrayishBlue;
+        }
+    }
+}
+
+
+
+/* ==================== MEDIA QUERIES ==================== */
+    //for mobile
+@media screen and (max-width: 600px) {
+    .img_for_desktop{
+        display: none;
+    }
+    .img_for_mobile{
+        display: block;
+    }
+}
+
+    //for desktop
+@media screen and (min-width: 601px) {
+    .img_for_desktop{
+        display: block;
+    }
+    .img_for_mobile{
+        display: none;
+    }
+}
